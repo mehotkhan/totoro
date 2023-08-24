@@ -5,6 +5,7 @@ backend:
   auth_endpoint: /github-auth/auth
 
 local_backend: true
+publish_mode: editorial_workflow
 media_folder: /public/content
 public_folder: /content
 locale: fa
