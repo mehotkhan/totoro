@@ -16,9 +16,11 @@
         </div>
       </div>
     </header>
-    <main class="bg-white flex min-h-screen mt-20 w-full">
-      <div class="container prose-md leading-10 text-justify">
-        <slot />
+    <main class="bg-white flex min-h-screen mt-20">
+      <div class="container">
+        <div class="prose md:prose-xl leading-10 text-justify">
+          <slot />
+        </div>
       </div>
       <slot name="app-after" />
       <div id="app-after"></div>

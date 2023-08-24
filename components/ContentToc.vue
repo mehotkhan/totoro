@@ -18,8 +18,6 @@ const tocLinksH2: Ref<Array<HTMLElement>> = ref([]);
 const tocLinksH3: Ref<Array<HTMLElement>> = ref([]);
 
 const tocLinks = computed(() => props?.post?.body.toc.links ?? []);
-const dir = computed(() => props?.post?.dir);
-const tocTags = computed(() => props?.post.value?.tags ?? []);
 
 const onClick = (id: string) => {
   const el = document.getElementById(id);
@@ -38,7 +36,9 @@ onMounted(() => {
     });
   }, observerOptions);
   document
-    .querySelectorAll(".content h2[id], .content h3[id] , .content h4[id]")
+    .querySelectorAll(
+      ".content h1[id] .content h2[id], .content h3[id] , .content h4[id]"
+    )
     .forEach((section) => {
       observer.value?.observe(section);
     });
@@ -50,9 +50,9 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="px-3 md:p-0 mb-5" :class="dir === 'ltr' ? 'ltr' : 'rtl'">
+  <div class="px-3 md:p-0 mb-5">
     <h3 class="text-bold pb-2 mb-5 border-b border-gray-200">
-      {{ dir === "ltr" ? "Sections" : "سرفصل‌ها" }}
+      {{ "سرفصل‌ها" }}
     </h3>
     <nav class="flex">
       <div class="relative bg-secondary w-0.5 rounded">
@@ -92,21 +92,5 @@ onUnmounted(() => {
         </li>
       </ul>
     </nav>
-    <div v-if="tocTags?.length > 0">
-      <h4
-        class="text-xl md:text-2xl text-bold pb-2 my-5 border-b border-dashed border-gray-400"
-      >
-        برچسب‌ها
-      </h4>
-      <ol class="mb-10" :class="dir === 'ltr' ? 'ltr text-left' : 'rtl'">
-        <li
-          v-for="tag in tocTags"
-          :key="tag"
-          class="text-md md:text-xl pb-3 mx-"
-        >
-          <span class="font-thin text-2xl">#</span> {{ tag }}
-        </li>
-      </ol>
-    </div>
   </div>
 </template>

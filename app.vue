@@ -3,7 +3,10 @@ const appConfig = useAppConfig();
 
 useHead({
   title: appConfig.app.titleFirst + appConfig.app.titleSecond,
-  titleTemplate: appConfig.app.titleTemplate,
+  titleTemplate: `%s - ${
+    appConfig.app.titleFirst + appConfig.app.titleSecond
+  }:// ${appConfig.app.description} `,
+
   meta: [
     { name: "viewport", content: "width=device-width, initial-scale=1" },
     { name: "theme-color", content: appConfig.app.color },

@@ -19,19 +19,15 @@
                 <li key="category" class="text-lg">
                   {{ doc?.category }}
                 </li>
-                <li v-for="tag in doc?.tags" :key="tag" class="text-lg pl-0">
-                  <span class="font-bold text-sm">،</span>
-                  {{ tag }}
-                </li>
               </ul>
             </div>
             <div class="basis-2/2 md:basis-1/2 flex justify-end items-center">
               <nuxt-img class="flex max-h-[30rem]" :src="doc?.thumbnail" />
             </div>
           </div>
-          <div class="flex relative justify-between mx-3 md:m-0">
-            <div class="basis-4/4 md:basis-3/4 ml-10">
-              <ContentRenderer :value="doc" />
+          <div class="flex relative justify-between md:m-0">
+            <div class="basis-4/4 md:basis-3/4 md:ml-10">
+              <ContentRenderer :value="doc" class="content" />
               <LazyComments />
             </div>
             <div class="relative hidden md:block basis-1/4">

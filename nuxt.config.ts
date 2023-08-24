@@ -27,7 +27,7 @@ export default defineNuxtConfig({
   nitro: {
     compressPublicAssets: true,
     prerender: {
-      crawlLinks: true,
+      crawlLinks: false,
       routes: GenerateRoutes(["blogs", "pages"]),
     },
   },
