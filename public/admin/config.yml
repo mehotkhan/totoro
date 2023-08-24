@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: mehotkhan/totoro
-  base_url: https://totoro-9hf.pages.dev
+  base_url: https://totoro.alizemani.ir
   auth_endpoint: /github-auth/auth
 
 local_backend: true
