@@ -9,7 +9,7 @@
       repo-id="R_kgDOKK9Djw"
       category="General"
       category-id="DIC_kwDOKK9Dj84CY100"
-      mapping="pathname"
+      mapping="title"
       strict="0"
       reactionsenabled="1"
       theme="light"
