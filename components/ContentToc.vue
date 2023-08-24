@@ -37,7 +37,7 @@ onMounted(() => {
   }, observerOptions);
   document
     .querySelectorAll(
-      ".content h1[id] .content h2[id], .content h3[id] , .content h4[id]"
+      ".content h1[id] .content h2[id], .content h3[id] , .content h4[id]",
     )
     .forEach((section) => {
       observer.value?.observe(section);
