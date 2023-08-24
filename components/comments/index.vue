@@ -2,17 +2,19 @@
   <div>
     <h3>دیدگاه‌ها</h3>
     <CommentsGiscus
-      repo="mehotkhan/front"
-      repo-id="MDEwOlJlcG9zaXRvcnkzOTEzMTMwMjA="
-      category="Announcements"
-      category-id="DIC_kwDOF1L2fM4B-hVS"
-      mapping="specific"
-      term="Welcome to @giscus/vue component!"
-      strict="1"
+      repo="mehotkhan/totoro"
+      term="به توتورو خوش آمدید :)"
       reactions-enabled="1"
       emit-metadata="0"
-      input-position="top"
+      repo-id="R_kgDOKK9Djw"
+      category="General"
+      category-id="DIC_kwDOKK9Dj84CY100"
+      mapping="pathname"
+      strict="0"
+      reactionsenabled="1"
       theme="light"
+      loading="lazy"
+      input-position="top"
       lang="fa"
     />
   </div>
