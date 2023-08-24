@@ -1,0 +1,19 @@
+<template>
+  <div>
+    <h3>دیدگاه‌ها</h3>
+    <CommentsGiscus
+      repo="mehotkhan/front"
+      repo-id="MDEwOlJlcG9zaXRvcnkzOTEzMTMwMjA="
+      category="Announcements"
+      category-id="DIC_kwDOF1L2fM4B-hVS"
+      mapping="specific"
+      term="Welcome to @giscus/vue component!"
+      strict="1"
+      reactions-enabled="1"
+      emit-metadata="0"
+      input-position="top"
+      theme="light"
+      lang="fa"
+    />
+  </div>
+</template>

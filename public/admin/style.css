@@ -1,0 +1,77 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+div {
+  font-family: Vazirmatn !important;
+}
+body {
+  font-family: Vazirmatn !important;
+  font-weight: 400;
+}
+
+.css-t5h4ts-Editor p {
+  font-size: 1rem;
+}
+
+.css-1gj57a0-SidebarContainer-card,
+.css-1iwq7gj-GridCard-card,
+.css-1hvrgvd-CollectionTopContainer-card-cardTop,
+.css-1prcas7-ControlPaneContainer,
+.css-2oej7z-ToolbarContainer,
+.SplitPane,
+.frame-content,
+.css-12b66la-AppHeaderContent,
+.css-882a4r-CardsGrid,
+.css-1f3mf5k-StyledModal {
+  direction: rtl;
+}
+.css-1lv5pus-SidebarNavList {
+  padding-right: 0 !important;
+}
+.css-1f7nhiq-CollectionMain {
+  padding-right: 280px !important;
+  padding-left: 0 !important;
+  width: 100% !important;
+}
+ul.css-tsu4ds-DropdownList-dropdownList-DropdownList {
+  padding-right: 0 !important;
+}
+
+.css-pyxbz6-CollectionContainer {
+  display: flex !important;
+  flex-direction: row-reverse !important;
+}
+.css-17fei3e-CardHeading {
+  text-align: right !important;
+}
+.css-1hvrgvd-CollectionTopContainer-card-cardTop,
+.css-p5sjac-CollectionControlsContainer {
+  width: auto !important;
+}
+
+.css-5wgw3f-ListCard-card {
+  width: 100% !important;
+}
+.css-882a4r-CardsGrid {
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: -13px !important;
+}
+.css-179mynt-BackArrow {
+  rotate: 180deg !important;
+  margin-left: 16px !important;
+  margin-right: 0 !important;
+}
+.css-1h1mlij-DropdownList-dropdownList-DropdownList {
+  right: auto !important;
+  left: 0 !important;
+}
+
+.frame-content img {
+  width: 100% !important;
+}

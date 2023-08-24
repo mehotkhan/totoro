@@ -1,0 +1,81 @@
+backend:
+  name: github
+  repo: mehotkhan/front
+  base_url: https://alizemani.ir
+  auth_endpoint: /github-auth/auth
+
+local_backend: true
+media_folder: /public/content
+public_folder: /content
+locale: fa
+collections:
+  - name: "notes"
+    label: "یادداشت"
+    folder: "content/blogs"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "عنوان", name: "title", widget: "string" }
+      - { label: "پوستر", name: "thumbnail", widget: "image", required: false }
+      - {
+          label: "خلاصه",
+          name: "description",
+          widget: "string",
+          required: false,
+        }
+
+      - { label: "محتوا", name: "body", widget: "markdown" }
+      - { label: "تاریخ انتشار", name: "date", widget: "datetime" }
+
+      - {
+          name: "category",
+          label: "سرویس",
+          widget: "relation",
+          collection: "category",
+          searchFields: ["name"],
+          valueField: "name",
+          displayFields: ["name"],
+          required: false,
+        }
+
+      - { label: "بنر", name: "banner", widget: "boolean", default: false }
+
+  - name: "page"
+    label: "صفحه"
+    folder: "content/pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "عنوان", name: "title", widget: "string" }
+      - { label: "پوستر", name: "thumbnail", widget: "image", required: false }
+      - {
+          label: "خلاصه",
+          name: "description",
+          widget: "string",
+          required: false,
+        }
+
+      - { label: "slug", name: "slug", widget: "slug" }
+      - { label: "محتوا", name: "body", widget: "markdown" }
+      - {
+          label: "افزودن به منو",
+          name: "menu",
+          widget: "boolean",
+          default: false,
+        }
+
+  - name: category
+    label: دسته‌بندی‌
+    folder: content/category/
+    create: true
+    slug: "{{slug}}"
+    identifier_field: name
+    fields:
+      - { name: "name", label: "نام" }
+      - { label: "پوستر", name: "thumbnail", widget: "image", required: false }
+      - {
+          label: "خلاصه",
+          name: "description",
+          widget: "string",
+          required: false,
+        }
