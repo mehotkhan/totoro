@@ -20,27 +20,7 @@
               <nuxt-img class="flex max-h-[30rem]" :src="doc?.thumbnail" />
             </div>
           </div>
-          <div
-            class="flex relative justify-between mx-3 md:m-0"
-            :class="doc?.dir === 'ltr' ? '  flex-row-reverse' : 'flex-row'"
-          >
-            <div
-              class="basis-4/4 md:basis-3/4"
-              :class="doc?.dir === 'ltr' ? 'ltr md:mr-10' : 'rtl md:ml-10'"
-            >
-              <ContentRenderer :value="doc" class="content" />
-              <Comments />
-            </div>
-            <div
-              class="relative hidden md:block basis-1/4"
-              :class="doc?.dir === 'ltr' ? 'ml-10' : 'mr-10'"
-            >
-              <div class="left-0 sticky top-[7rem]">
-                <Cart v-if="doc?.service == 'market'" />
-                <ContentToc :post="doc" />
-              </div>
-            </div>
-          </div>
+          <LatestItems :category="doc.name" class="mx-[4rem]" />
         </section>
       </template>
     </ContentDoc>

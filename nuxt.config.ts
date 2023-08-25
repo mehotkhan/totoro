@@ -28,7 +28,7 @@ export default defineNuxtConfig({
     compressPublicAssets: true,
     prerender: {
       crawlLinks: false,
-      routes: GenerateRoutes(["blogs", "pages"]),
+      routes: GenerateRoutes(["blogs", "pages", "category"]),
     },
   },
   experimental: {

@@ -72,11 +72,6 @@ collections:
     slug: "{{slug}}"
     identifier_field: name
     fields:
-      - { name: "name", label: "نام" }
-      - { label: "پوستر", name: "thumbnail", widget: "image", required: false }
-      - {
-          label: "خلاصه",
-          name: "description",
-          widget: "string",
-          required: false,
-        }
+      - { name: "name", label: "نام", required: true }
+      - { label: "پوستر", name: "thumbnail", widget: "image", required: true }
+      - { label: "محتوا", name: "body", widget: "markdown", required: true }

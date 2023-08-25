@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 const { data }: any = useAsyncData("banner", () =>
-  queryContent("blogs").where({ banner: true }).sort({ date: -1 }).findOne(),
+  queryContent("blogs").where({ banner: true }).sort({ date: -1 }).findOne()
 );
 </script>
 <template>
@@ -32,6 +32,7 @@ const { data }: any = useAsyncData("banner", () =>
       </div>
       <div class="basis-2/2 md:basis-1/2 flex justify-end items-center">
         <nuxt-img
+          lazy
           v-if="data?.thumbnail"
           class="flex max-h-[30rem]"
           :src="data?.thumbnail"
