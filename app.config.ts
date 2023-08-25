@@ -6,7 +6,7 @@ export default defineAppConfig({
     favicon: "/favicon.ico",
     icon: "/icons.png",
     color: "#e5e7eb",
-    github: "https://github.com/mehotkhan",
+    github: "https://github.com/mehotkhan/totoro",
     linkedin: "",
     twitter: "",
   },
