@@ -5,6 +5,8 @@ import IconsResolver from "unplugin-icons/resolver";
 import { GenerateRoutes } from "./tools/contentRoutes";
 
 export default defineNuxtConfig({
+  ssr: true,
+  target: "static",
   css: [
     "@/assets/scss/base.scss",
     "@/node_modules/vazirmatn/Vazirmatn-Variable-font-face.css",
@@ -32,7 +34,7 @@ export default defineNuxtConfig({
     },
   },
   experimental: {
-    payloadExtraction: false,
+    payloadExtraction: true,
     treeshakeClientOnly: false,
   },
 });
