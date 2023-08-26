@@ -34,9 +34,11 @@ const { data }: any = useAsyncData("category", () =>
           <div class="flex">
             <nuxt-img
               v-if="cat?.thumbnail"
+              preload
+              loading="lazy"
+              sizes="sm:100vw md:50vw lg:400px"
               class="flex max-h-[7rem]"
               :src="cat?.thumbnail"
-              lazy
             />
             <div>
               <h3

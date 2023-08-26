@@ -32,8 +32,10 @@ const { data }: any = useAsyncData("banner", () =>
       </div>
       <div class="basis-2/2 md:basis-1/2 flex justify-end items-center">
         <nuxt-img
-          lazy
           v-if="data?.thumbnail"
+          preload
+          loading="lazy"
+          sizes="sm:100vw md:50vw lg:400px"
           class="flex max-h-[30rem]"
           :src="data?.thumbnail"
         />

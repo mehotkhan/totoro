@@ -22,7 +22,13 @@
               </ul>
             </div>
             <div class="basis-2/2 md:basis-1/2 flex justify-end items-center">
-              <nuxt-img class="flex max-h-[30rem]" :src="doc?.thumbnail" />
+              <nuxt-img
+                preload
+                loading="lazy"
+                sizes="sm:100vw md:50vw lg:400px"
+                class="flex max-h-[30rem]"
+                :src="doc?.thumbnail"
+              />
             </div>
           </div>
           <div class="flex relative justify-between md:m-0">
