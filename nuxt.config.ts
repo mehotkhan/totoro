@@ -43,4 +43,8 @@ export default defineNuxtConfig({
     payloadExtraction: false,
     treeshakeClientOnly: false,
   },
+  image: {
+    format: ["webp"],
+    provider: "ipx",
+  },
 });
