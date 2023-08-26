@@ -5,7 +5,6 @@ useHead({
 const { data }: any = useAsyncData("category", () =>
   queryContent("category").find()
 );
-console.log(data);
 </script>
 <template>
   <section class="flex mt-5">

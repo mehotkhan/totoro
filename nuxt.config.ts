@@ -24,6 +24,12 @@ export default defineNuxtConfig({
       }),
       Icons(),
     ],
+    build: {
+      watch: {},
+      sourcemap: false,
+      minify: true,
+      rollupOptions: { treeshake: false },
+    },
   },
 
   nitro: {
@@ -34,7 +40,7 @@ export default defineNuxtConfig({
     },
   },
   experimental: {
-    payloadExtraction: true,
+    payloadExtraction: false,
     treeshakeClientOnly: false,
   },
 });
