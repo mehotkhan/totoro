@@ -1,7 +1,7 @@
 ---
 title: بلاگ
 date: 2023-08-12T04:29:59.358Z
-thumbnail: /content/totoro-image-7.png
+thumbnail: /content/totoro-image-12.png
 menu: false
 ---
 

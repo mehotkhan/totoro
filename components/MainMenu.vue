@@ -10,11 +10,10 @@ const { data }: any = useAsyncData("pages", () =>
   <ul class="list-none flex mt-8">
     <li v-for="menu in appConfig.menuItems" :key="menu.to">
       <NuxtLink
+        :external="true"
         :to="menu.to"
         class="hover:text-black py-1 px-5"
-        :class="
-          menu.to !== '/' && route.path == menu.to ? 'router-link-active' : ''
-        "
+        :class="route.path == menu.to ? 'router-link-active' : ''"
         >{{ menu.title }}</NuxtLink
       >
     </li>
