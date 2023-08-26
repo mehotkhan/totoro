@@ -1,7 +1,7 @@
 export default defineAppConfig({
   app: {
     titleFirst: "تو",
-    titleSecond: "ترو",
+    titleSecond: "تورو",
     description: "جم‌استک استارتر ",
     favicon: "/favicon.ico",
     icon: "/icons.png",
