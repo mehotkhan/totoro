@@ -36,7 +36,7 @@ const query: QueryBuilderParams = {
       </div>
     </template>
     <template #not-found>
-      <p>خالی :)</p>
+      <p>هیچی نیست :)</p>
     </template>
   </ContentList>
 </template>

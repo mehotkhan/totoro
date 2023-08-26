@@ -7,15 +7,18 @@ const { data }: any = useAsyncData("category", () =>
 );
 </script>
 <template>
-  <section class="flex mt-5">
-    <div class="w-full grid grid-cols-3 gap-10 align-middle">
+  <section class="flex flex-col">
+    <PageHeader />
+
+    <div class="w-full grid grid-cols-3 gap-10 align-middle mt-0">
       <UCard
         v-for="cat in data"
         :key="cat._path"
         class="w-full max-h-[30rem]"
         :ui="{
           base: '',
-          ring: 'ring-1',
+          ring: '',
+          shadow: '',
           divide: 'divide-y divide-gray-200 dark:divide-gray-700',
           header: { padding: 'p-0' },
           body: {
@@ -29,21 +32,19 @@ const { data }: any = useAsyncData("category", () =>
           <div class="flex">
             <nuxt-img
               v-if="cat?.thumbnail"
-              class="flex max-h-[10rem]"
+              class="flex max-h-[7rem]"
               :src="cat?.thumbnail"
               lazy
             />
             <div>
               <h3
-                class="font-semibold text-md text-gray-900 dark:text-white leading-tight"
+                class="font-semibold text-sm text-gray-900 dark:text-white leading-tight hover:underline"
               >
-                <NuxtLink :to="cat._path">
-                  {{ cat.title }}
-                </NuxtLink>
+                <NuxtLink :to="cat._path"> # {{ cat.title }} </NuxtLink>
               </h3>
 
               <p
-                class="font-thin text-md text-gray-900 dark:text-white leading-tight"
+                class="font-thin text-s text-gray-900 dark:text-white leading-tight"
               >
                 <ContentRenderer :value="cat" class="content" />
               </p>

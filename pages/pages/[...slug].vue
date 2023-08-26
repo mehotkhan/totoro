@@ -17,7 +17,7 @@
               </p>
             </div>
             <div class="basis-2/2 md:basis-1/2 flex justify-end items-center">
-              <nuxt-img class="flex max-h-[30rem]" :src="doc?.thumbnail" />
+              <nuxt-img class="flex max-h-[20rem]" :src="doc?.thumbnail" />
             </div>
           </div>
           <div class="flex relative mx-3 md:m-0">

@@ -5,7 +5,9 @@ useHead({
 </script>
 <template>
   <section class="flex flex-col">
-    <IntroPost />
+    <!-- <IntroPost /> -->
+    <PageHeader />
+
     <LatestItems />
   </section>
 </template>
