@@ -8,7 +8,9 @@ const { data }: any = useAsyncData("category", () =>
 </script>
 <template>
   <section class="flex flex-col">
-    <PageHeader />
+    <ContentDoc v-slot="{ doc }" path="/pages/category">
+      <PageHeader :data="doc" />
+    </ContentDoc>
 
     <div class="w-full grid grid-cols-3 gap-10 align-middle mt-0">
       <UCard

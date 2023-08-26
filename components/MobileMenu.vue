@@ -1,6 +1,8 @@
 <script setup lang="ts">
 const appConfig = useAppConfig();
-const { data }: any = useAsyncData("pages", () => queryContent("pages").find());
+const { data }: any = useAsyncData("pages", () =>
+  queryContent("pages").where({ menu: true }).find()
+);
 const items = computed(() => {
   const menus: any[] = [];
   appConfig.menuItems.forEach((menu: any) => {

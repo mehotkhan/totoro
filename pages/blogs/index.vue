@@ -5,9 +5,9 @@ useHead({
 </script>
 <template>
   <section class="flex flex-col">
-    <!-- <IntroPost /> -->
-    <PageHeader />
-
+    <ContentDoc v-slot="{ doc }" path="/pages/blogs">
+      <PageHeader :data="doc" />
+    </ContentDoc>
     <LatestItems />
   </section>
 </template>

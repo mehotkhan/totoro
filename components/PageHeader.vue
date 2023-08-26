@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-const { data }: any = useAsyncData("banner", () =>
-  queryContent("blogs").where({ banner: false }).sort({ date: -1 }).findOne()
-);
+const props = defineProps({
+  data: { type: Object, required: true, default: {} },
+});
 </script>
 <template>
-  <ContentRenderer :value="data">
+  <ContentRenderer :value="props.data">
     <div
       class="flex flex-col-reverse md:flex-row justify-between items-center h-screen-md"
     >
@@ -20,15 +20,6 @@ const { data }: any = useAsyncData("banner", () =>
         <p>
           {{ data?.description }}
         </p>
-        <ul class="flex flex-row mt-0 list-none items-center">
-          <li key="category" class="text-lg">
-            {{ data?.category }}
-            <span class="font-bold text-sm">،</span>
-          </li>
-          <li key="link" class="text-lg">
-            <NuxtLink :to="data?._path" class="underline"> بیشتر </NuxtLink>
-          </li>
-        </ul>
       </div>
       <div class="basis-2/2 md:basis-1/2 flex justify-end items-center">
         <nuxt-img
