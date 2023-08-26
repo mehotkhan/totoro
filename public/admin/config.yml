@@ -16,16 +16,16 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { label: "عنوان", name: "title", widget: "string" }
-      - { label: "پوستر", name: "thumbnail", widget: "image", required: false }
+      - { label: "عنوان", name: "title", widget: "string", required: true }
+      - { label: "پوستر", name: "thumbnail", widget: "image", required: true }
       - {
           label: "خلاصه",
           name: "description",
           widget: "string",
-          required: false,
+          required: true,
         }
 
-      - { label: "محتوا", name: "body", widget: "markdown" }
+      - { label: "محتوا", name: "body", widget: "markdown", required: true }
       - { label: "تاریخ انتشار", name: "date", widget: "datetime" }
 
       - {
@@ -36,7 +36,7 @@ collections:
           searchFields: ["name"],
           valueField: "name",
           displayFields: ["name"],
-          required: false,
+          required: true,
         }
 
       - { label: "بنر", name: "banner", widget: "boolean", default: false }
@@ -47,22 +47,22 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "عنوان", name: "title", widget: "string" }
+      - { label: "عنوان", name: "title", widget: "string", required: true }
       - { label: "پوستر", name: "thumbnail", widget: "image", required: false }
       - {
           label: "خلاصه",
           name: "description",
           widget: "string",
-          required: false,
+          required: true,
         }
 
-      - { label: "slug", name: "slug", widget: "slug" }
-      - { label: "محتوا", name: "body", widget: "markdown" }
+      - { label: "محتوا", name: "body", widget: "markdown", required: true }
       - {
           label: "افزودن به منو",
           name: "menu",
           widget: "boolean",
           default: false,
+          required: true,
         }
 
   - name: category
