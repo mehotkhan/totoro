@@ -23,7 +23,7 @@ const onClick = (id: string) => {
   const el = document.getElementById(id);
   if (el) {
     router.push({ hash: `#${id}` });
-    el.scrollIntoView({ behavior: "smooth", block: "center" });
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
     currentSection.value = id;
   }
 };
