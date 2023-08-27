@@ -9,7 +9,7 @@ const nuxtContent = ref(null);
 const observer: Ref<IntersectionObserver | null | undefined> = ref(null);
 const observerOptions = reactive({
   root: nuxtContent.value,
-  threshold: 0.5,
+  threshold: 1,
 });
 const router = useRouter();
 const sliderHeight = useState("sliderHeight", () => 0);
@@ -24,6 +24,7 @@ const onClick = (id: string) => {
   if (el) {
     router.push({ hash: `#${id}` });
     el.scrollIntoView({ behavior: "smooth", block: "center" });
+    currentSection.value = id;
   }
 };
 onMounted(() => {
@@ -36,9 +37,7 @@ onMounted(() => {
     });
   }, observerOptions);
   document
-    .querySelectorAll(
-      ".content h1[id] .content h2[id], .content h3[id] , .content h4[id]",
-    )
+    .querySelectorAll(".content h2[id],.content h3[id],.content h4[id] ")
     .forEach((section) => {
       observer.value?.observe(section);
     });
@@ -50,14 +49,14 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="px-3 md:p-0 mb-5">
-    <h3 class="text-bold pb-2 mb-5 border-b border-gray-200">
+  <div class="px-3 md:p-0 mb-5 text-md">
+    <h3 class="text-bold">
       {{ "سرفصل‌ها" }}
     </h3>
     <nav class="flex">
-      <div class="relative bg-secondary w-0.5 rounded">
+      <div class="relative">
         <div
-          class="absolute left-0 w-full transition-all duration-200 rounded bg-red-500"
+          class="absolute right-0 w-full transition-all duration-200 rounded bg-red-500"
           :style="{ height: `${sliderHeight}px`, top: `${sliderTop}px` }"
         ></div>
       </div>
@@ -73,8 +72,10 @@ onUnmounted(() => {
           }"
           @click="onClick(id)"
         >
-          {{ text }}
-          <ul v-if="children" class="ml-3 my-2">
+          <span class="whitespace-nowrap">
+            {{ text }}
+          </span>
+          <ul v-if="children" class="mr-3 my-2">
             <li
               v-for="{ id: childId, text: childText } in children"
               :id="`toc-${childId}`"
@@ -86,9 +87,18 @@ onUnmounted(() => {
               }"
               @click.stop="onClick(childId)"
             >
-              {{ childText }}
+              <span class="whitespace-nowrap">
+                {{ childText }}
+              </span>
             </li>
           </ul>
+        </li>
+        <li
+          v-if="props.post?.comment"
+          class="cursor-pointer pb-3 mb-2 last:mb-0 mx-5"
+          @click.stop="onClick('comments')"
+        >
+          <span>دیدگاه ها</span>
         </li>
       </ul>
     </nav>

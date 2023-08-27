@@ -40,6 +40,7 @@ collections:
         }
 
       - { label: "بنر", name: "banner", widget: "boolean", default: false }
+      - { label: "دیدگاه", name: "comment", widget: "boolean", default: true }
 
   - name: "page"
     label: "صفحه"

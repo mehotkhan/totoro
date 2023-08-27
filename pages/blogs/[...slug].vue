@@ -1,8 +1,9 @@
+<script setup lang="ts"></script>
 <template>
-  <section class="flex flex-col justify-center content-center">
+  <section class="flex flex-col justify-center content-center pb-10">
     <ContentDoc>
       <template #default="{ doc }">
-        <section class="flex flex-col">
+        <section class="flex flex-col node-page">
           <div
             class="flex flex-col-reverse md:flex-row justify-between items-center h-screen-sm border-b md:border-0"
           >
@@ -32,14 +33,14 @@
             </div>
           </div>
           <div class="flex relative justify-between md:m-0">
-            <div class="basis-4/4 md:basis-3/4 md:ml-10">
-              <ContentRenderer :value="doc" class="content" />
-              <LazyComments />
-            </div>
-            <div class="relative hidden md:block basis-1/4">
+            <div class="relative hidden md:block basis-2/12">
               <div class="left-0 sticky top-[7rem]">
                 <ContentToc :post="doc" />
               </div>
+            </div>
+            <div class="basis-12/12 md:basis-10/12 md:mr-10">
+              <ContentRenderer :value="doc" class="content mb-10" />
+              <LazyComments v-if="doc?.comment" />
             </div>
           </div>
         </section>
@@ -47,3 +48,13 @@
     </ContentDoc>
   </section>
 </template>
+<style lang="scss">
+.content {
+  h1,
+  h2,
+  h3,
+  h4 {
+    scroll-margin-top: 7rem;
+  }
+}
+</style>

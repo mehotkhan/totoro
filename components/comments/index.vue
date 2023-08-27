@@ -1,7 +1,11 @@
 <template>
   <div>
-    <h3>دیدگاه‌ها</h3>
+    <h3>
+      <a href="#comments"> دیدگاه‌ها </a>
+    </h3>
+
     <CommentsGiscus
+      id="comments"
       repo="mehotkhan/totoro"
       term="به توتورو خوش آمدید :)"
       reactions-enabled="1"
