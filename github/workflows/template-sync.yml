@@ -1,11 +1,13 @@
 name: Repo Sync
 
 on:
-    # cronjob trigger
-  schedule:
-  - cron:  "0/15 * * * *"
-  # manual trigger
-  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+# on:
+#   schedule:
+#     - cron:  "0/15 * * * *"
 
 jobs:
   repo-sync:
