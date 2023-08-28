@@ -1,8 +1,11 @@
 name: Repo Sync
 
 on:
-  schedule: 
-  - cron: "0 0 * * *" # At 12:00am
+    # cronjob trigger
+  schedule:
+  - cron:  "0/15 * * * *"
+  # manual trigger
+  workflow_dispatch:
 
 jobs:
   repo-sync:
