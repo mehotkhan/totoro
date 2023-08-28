@@ -1,13 +1,16 @@
+<script setup lang="ts">
+const appConfig = useAppConfig();
+</script>
 <template>
-  <div>
+  <div v-if="appConfig.app.giscus">
     <h3>
       <a href="#comments"> دیدگاه‌ها </a>
     </h3>
 
     <CommentsGiscus
       id="comments"
-      repo="mehotkhan/totoro"
-      term="به توتورو خوش آمدید :)"
+      :repo="appConfig?.app.giscus_repo"
+      :term="appConfig?.app.giscus_term"
       reactions-enabled="1"
       emit-metadata="0"
       repo-id="R_kgDOKK9Djw"

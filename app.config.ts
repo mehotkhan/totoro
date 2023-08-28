@@ -9,6 +9,9 @@ export default defineAppConfig({
     github: "https://github.com/mehotkhan/totoro",
     linkedin: "",
     twitter: "",
+    giscus: true, // enable  giscus comment systems
+    giscus_term: "به توتورو خوش آمدید :)",
+    giscus_repo: "mehotkhan/totoro",
   },
   ui: {
     primary: "gray",
