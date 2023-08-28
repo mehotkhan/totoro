@@ -7,12 +7,12 @@
     >
       <div class="flex container justify-between items-center py-4">
         <div class="flex items-center">
-          <LogoArea />
-          <MainMenu class="text-md hidden md:text-sm lg:contents" />
+          <BaseLogoArea />
+          <BaseMainMenu class="text-md hidden md:text-sm lg:contents" />
         </div>
         <div class="flex gap-3">
-          <MobileMenu class="text-md lg:hidden" />
-          <Social class="items-center hidden md:flex" />
+          <BaseMobileMenu class="text-md lg:hidden" />
+          <BaseSocial class="items-center hidden md:flex" />
         </div>
       </div>
     </header>

@@ -11,9 +11,7 @@ const props = defineProps({
       <div class="basis-2/2 md:basis-1/2 flex-col justify-start items-center">
         <div class="items-center flex gap-3">
           <h2 class="">
-            <NuxtLink :to="data?._path" class="">
-              {{ data?.title }}
-            </NuxtLink>
+            {{ data?.title }}
           </h2>
         </div>
 

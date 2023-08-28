@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useHead({
-  title: "یادداشت‌ها",
+  title: "دسته‌بندی‌ها",
 });
 const { data }: any = useAsyncData("category", () =>
   queryContent("category").find()
@@ -9,7 +9,7 @@ const { data }: any = useAsyncData("category", () =>
 <template>
   <section class="flex flex-col">
     <ContentDoc v-slot="{ doc }" path="/pages/category">
-      <PageHeader :data="doc" />
+      <BasePageHeader :data="doc" />
     </ContentDoc>
 
     <div class="w-full grid grid-cols-3 gap-10 align-middle mt-0">
@@ -55,7 +55,7 @@ const { data }: any = useAsyncData("category", () =>
             </div>
           </div>
         </template>
-        <LatestItems :category="cat.name" />
+        <BaseLatestItems :category="cat.name" />
       </UCard>
     </div>
     <!-- <IntroPost /> -->

@@ -2,9 +2,9 @@
 const appConfig = useAppConfig();
 
 useHead({
-  title: appConfig.app.titleFirst + appConfig.app.titleSecond,
+  title: appConfig.app.titleFirst + " " + appConfig.app.titleSecond,
   titleTemplate: `%s - ${
-    appConfig.app.titleFirst + appConfig.app.titleSecond
+    appConfig.app.titleFirst + " " + appConfig.app.titleSecond
   }:// ${appConfig.app.description} `,
 
   meta: [
@@ -39,5 +39,3 @@ useHead({
     </Body>
   </Html>
 </template>
-
-<style lang="scss"></style>

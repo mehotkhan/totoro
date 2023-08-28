@@ -5,8 +5,8 @@ useHead({
 </script>
 <template>
   <section class="flex flex-col">
-    <IntroPost />
+    <BaseIntroPost />
     <h3 class="border-b pb-3">جدیدترین ورودی‌ها</h3>
-    <LatestItems />
+    <BaseLatestItems />
   </section>
 </template>

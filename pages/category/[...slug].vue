@@ -26,7 +26,7 @@
               />
             </div>
           </div>
-          <LatestItems :category="doc.name" class="mx-[4rem]" />
+          <BaseLatestItems :category="doc.name" class="mx-[4rem]" />
         </section>
       </template>
     </ContentDoc>

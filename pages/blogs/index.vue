@@ -1,13 +1,13 @@
 <script setup>
 useHead({
-  title: "یادداشت‌ها",
+  title: "بلاگ",
 });
 </script>
 <template>
   <section class="flex flex-col">
     <ContentDoc v-slot="{ doc }" path="/pages/blogs">
-      <PageHeader :data="doc" />
+      <BasePageHeader :data="doc" />
     </ContentDoc>
-    <LatestItems />
+    <BaseLatestItems />
   </section>
 </template>
