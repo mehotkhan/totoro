@@ -1,6 +1,6 @@
 ---
 title: سلام دنیا :)
-thumbnail: /content/totoro_render.png
+thumbnail: /content/totoro_render.webp
 description: توتورو یک استارتر کیت متن باز برای راه اندازی یک بلاگ شخصی خیلی
   مینیمال و ساده بر اساس معماری جم استک است .
 date: 2023-08-26T11:16:42.877Z
