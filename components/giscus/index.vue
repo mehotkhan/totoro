@@ -7,7 +7,7 @@ const appConfig = useAppConfig();
       <a href="#comments"> دیدگاه‌ها </a>
     </h3>
 
-    <CommentsGiscus
+    <GiscusComments
       id="comments"
       :repo="appConfig?.app.giscus_repo"
       :term="appConfig?.app.giscus_term"
