@@ -1,5 +1,7 @@
 {
   "private": true,
+  "name": "Totoro",
+  "description": "Jamstack starter Kit",
   "scripts": {
     "build": "nuxt build",
     "clean": "rm -rf .nuxt dist .output",
