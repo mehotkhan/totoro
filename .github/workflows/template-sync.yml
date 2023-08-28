@@ -1,22 +1,25 @@
-# File: .github/workflows/template-sync.yml
-
 on:
-  # cronjob trigger
-  schedule:
-    - cron: "0 0 1 * *"
-  # manual trigger
-  workflow_dispatch:
+  push:
+    branches:
+      - master
+
 jobs:
   repo-sync:
+    name: Repo Sync
     runs-on: ubuntu-latest
-
     steps:
-      # To use this repository's private action, you must check out the repository
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: actions-template-sync
-        uses: AndreasAugustin/actions-template-sync@v1.1.1
+      - uses: actions/checkout@v3
+      - uses: repo-sync/github-sync@v2
+        name: Sync repo to branch
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          source_repo_path: mehotkhan/totoro
-          upstream_branch: master # defaults to main
+          source_repo: "mehotkhan/totoro"
+          source_branch: master
+          destination_branch: "update"
+          github_token: ${{ secrets.WORKFLOW_TOKEN }}
+
+      - uses: repo-sync/pull-request@v2
+        name: Create pull request
+        with:
+          source_branch: "update"
+          destination_branch: master
+          github_token: ${{ secrets.WORKFLOW_TOKEN }}
