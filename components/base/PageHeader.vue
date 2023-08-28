@@ -27,6 +27,8 @@ const props = defineProps({
           sizes="sm:100vw md:50vw lg:400px"
           class="flex max-h-[20rem]"
           :src="data?.thumbnail"
+          :alt="data?.title"
+
         />
       </div>
     </div>

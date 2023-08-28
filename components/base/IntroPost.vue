@@ -38,8 +38,10 @@ const { data }: any = useAsyncData("banner", () =>
           preload
           loading="lazy"
           sizes="sm:100vw md:50vw lg:400px"
-          class="flex max-h-[30rem]"
+          class="flex"
           :src="data?.thumbnail"
+          :alt="data?.title"
+          height="auto"
         />
       </div>
     </div>

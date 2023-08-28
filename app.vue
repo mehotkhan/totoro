@@ -29,7 +29,7 @@ useHead({
 });
 </script>
 <template>
-  <Html dir="rtl">
+  <Html dir="rtl" lang="fa">
     <Body>
       <NuxtLayout>
         <UContainer>

@@ -39,6 +39,8 @@ const { data }: any = useAsyncData("category", () =>
               sizes="sm:100vw md:50vw lg:400px"
               class="flex max-h-[7rem]"
               :src="cat?.thumbnail"
+              :alt="cat?.title"
+
             />
             <div>
               <h3
