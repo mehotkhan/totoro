@@ -24,7 +24,7 @@ const query: QueryBuilderParams = {
             :key="slug"
             class="mb-2"
           >
-            <NuxtLink :external="true" :to="slug">
+            <NuxtLink :external="false" :to="slug">
               {{ title }}
               <span v-if="!props.category" class="font-thin">
                 / {{ category }}

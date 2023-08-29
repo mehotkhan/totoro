@@ -32,6 +32,7 @@ useHead({
   <Html dir="rtl" lang="fa">
     <Body>
       <NuxtLayout>
+        <NuxtLoadingIndicator />
         <UContainer>
           <NuxtPage />
         </UContainer>
