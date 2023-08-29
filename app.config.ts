@@ -37,5 +37,9 @@ export default defineAppConfig({
       title: "دسته‌بندی‌ها",
       to: "/category",
     },
+    {
+      title: "تغییرات",
+      to: "/changes",
+    },
   ],
 });

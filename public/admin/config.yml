@@ -66,6 +66,25 @@ collections:
           required: true,
         }
 
+  - name: "changes"
+    label: "تغییرات"
+    folder: "content/changes"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "عنوان", name: "title", widget: "string", required: true }
+      - { label: "پوستر", name: "thumbnail", widget: "image", required: true }
+      - { label: "وضعیت", name: "status", widget: "string", required: true }
+      - { label: "زمان انتشار", name: "date", widget: "datetime" }
+
+      - {
+          label: "خلاصه",
+          name: "description",
+          widget: "string",
+          required: true,
+        }
+      - { label: "محتوا", name: "body", widget: "markdown", required: true }
+
   - name: category
     label: دسته‌بندی‌
     folder: content/category/
