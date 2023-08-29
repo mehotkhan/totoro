@@ -7,6 +7,6 @@ useHead({
   <section class="flex flex-col">
     <BaseIntroPost />
     <h3 class="border-b pb-3">جدیدترین ورودی‌ها</h3>
-    <BaseLatestItems />
+    <LazyBaseLatestItems />
   </section>
 </template>

@@ -9,7 +9,7 @@ const { data }: any = useAsyncData("category", () =>
 <template>
   <section class="flex flex-col">
     <ContentDoc v-slot="{ doc }" path="/pages/category">
-      <BasePageHeader :data="doc" />
+      <LazyBasePageHeader :data="doc" />
     </ContentDoc>
 
     <div class="w-full grid grid-cols-3 gap-10 align-middle mt-0">
@@ -57,7 +57,7 @@ const { data }: any = useAsyncData("category", () =>
             </div>
           </div>
         </template>
-        <BaseLatestItems :category="cat.name" />
+        <LazyBaseLatestItems :category="cat.name" />
       </UCard>
     </div>
     <!-- <IntroPost /> -->

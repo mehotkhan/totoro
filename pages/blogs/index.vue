@@ -6,8 +6,8 @@ useHead({
 <template>
   <section class="flex flex-col">
     <ContentDoc v-slot="{ doc }" path="/pages/blogs">
-      <BasePageHeader :data="doc" />
+      <LazyBasePageHeader :data="doc" />
     </ContentDoc>
-    <BaseLatestItems />
+    <LazyBaseLatestItems />
   </section>
 </template>
