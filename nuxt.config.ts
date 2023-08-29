@@ -11,7 +11,7 @@ export default defineNuxtConfig({
     "@/assets/scss/base.scss",
     "@/node_modules/vazirmatn/Vazirmatn-Variable-font-face.css",
   ],
-  modules: ["@nuxt/image-edge", "@nuxthq/ui", "@nuxt/content"],
+  modules: ["@nuxt/image-edge", "@nuxthq/ui", "@nuxt/content", "nuxt-purgecss"],
   vite: {
     plugins: [
       viteCompression({ algorithm: "brotliCompress" }),
@@ -33,7 +33,9 @@ export default defineNuxtConfig({
   },
 
   nitro: {
+    static: true,
     compressPublicAssets: true,
+    minify: true,
     prerender: {
       crawlLinks: false,
       routes: GenerateRoutes(["blogs", "pages", "category"]),
@@ -46,6 +48,5 @@ export default defineNuxtConfig({
   },
   image: {
     format: ["webp"],
-    provider: "ipx",
   },
 });

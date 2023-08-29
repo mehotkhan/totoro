@@ -36,11 +36,12 @@ const { data }: any = useAsyncData("category", () =>
               v-if="cat?.thumbnail"
               preload
               loading="lazy"
-              sizes="sm:100vw md:50vw lg:400px"
+              sizes="sm:100vw md:50vw lg:80px"
               class="flex max-h-[7rem]"
               :src="cat?.thumbnail"
               :alt="cat?.title"
-
+              :width="80"
+              height="auto"
             />
             <div>
               <h3
@@ -60,6 +61,5 @@ const { data }: any = useAsyncData("category", () =>
         <LazyBaseLatestItems :category="cat.name" />
       </UCard>
     </div>
-    <!-- <IntroPost /> -->
   </section>
 </template>
