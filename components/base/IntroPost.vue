@@ -42,6 +42,7 @@ const { data }: any = useAsyncData("banner", () =>
           :src="data?.thumbnail"
           :alt="data?.title"
           height="auto"
+          :width="400"
         />
       </div>
     </div>

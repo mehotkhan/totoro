@@ -11,7 +11,7 @@ export default defineNuxtConfig({
     "@/assets/scss/base.scss",
     "@/node_modules/vazirmatn/Vazirmatn-Variable-font-face.css",
   ],
-  modules: ["@nuxt/image", "@nuxthq/ui", "@nuxt/content"],
+  modules: ["@nuxt/image-edge", "@nuxthq/ui", "@nuxt/content"],
   vite: {
     plugins: [
       viteCompression({ algorithm: "brotliCompress" }),
