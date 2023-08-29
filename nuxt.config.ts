@@ -6,12 +6,11 @@ import viteCompression from "vite-plugin-compression";
 
 export default defineNuxtConfig({
   ssr: true,
-  target: "static",
   css: [
     "@/assets/scss/base.scss",
     "@/node_modules/vazirmatn/Vazirmatn-Variable-font-face.css",
   ],
-  modules: ["@nuxt/image-edge", "@nuxthq/ui", "@nuxt/content", "nuxt-purgecss"],
+  modules: ["@nuxt/image-edge", "@nuxthq/ui", "@nuxt/content"],
   vite: {
     plugins: [
       viteCompression({ algorithm: "brotliCompress" }),
