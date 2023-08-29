@@ -11,7 +11,7 @@ export default defineNuxtConfig({
     "@/assets/scss/base.scss",
     "@/node_modules/vazirmatn/Vazirmatn-Variable-font-face.css",
   ],
-  modules: ["@nuxt/image", "@nuxthq/ui", "@nuxt/content", "@nuxtjs/critters"],
+  modules: ["@nuxt/image", "@nuxthq/ui", "@nuxt/content"],
   vite: {
     plugins: [
       viteCompression({ algorithm: "brotliCompress" }),
@@ -47,10 +47,5 @@ export default defineNuxtConfig({
   image: {
     format: ["webp"],
     provider: "ipx",
-  },
-  critters: {
-    config: {
-      preload: "swap",
-    },
   },
 });

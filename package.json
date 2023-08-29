@@ -23,7 +23,6 @@
     "@nuxt/content": "npm:@nuxt/content-edge@latest",
     "@nuxt/image": "1.0.0-rc.1",
     "@nuxthq/ui": "npm:@nuxthq/ui-edge@2.7.0-28220472.9c24e7b",
-    "@nuxtjs/critters": "^0.5.0",
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
     "@types/node": "^20.5.7",
     "eslint": "^8.48.0",
