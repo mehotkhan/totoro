@@ -56,11 +56,11 @@ onUnmounted(() => {
     <nav class="flex">
       <div class="relative">
         <div
-          class="absolute right-0 w-full transition-all duration-200 rounded bg-red-500"
+          class="absolute right-0 w-full transition-all duration-200"
           :style="{ height: `${sliderHeight}px`, top: `${sliderTop}px` }"
         ></div>
       </div>
-      <ul class="max-h-150 overflow-auto">
+      <ul class="max-h-150 overflow-x-">
         <li
           v-for="{ id, text, children } in tocLinks"
           :id="`toc-${id}`"
