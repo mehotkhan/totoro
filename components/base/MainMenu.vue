@@ -2,7 +2,7 @@
 const appConfig = useAppConfig();
 const route = useRoute();
 const { data }: any = useAsyncData("pages", () =>
-  queryContent("pages").where({ menu: true }).find()
+  queryContent("pages").where({ menu: true }).find(),
 );
 </script>
 

@@ -3,7 +3,7 @@ useHead({
   title: "دسته‌بندی‌ها",
 });
 const { data }: any = useAsyncData("category", () =>
-  queryContent("category").find()
+  queryContent("category").find(),
 );
 </script>
 <template>

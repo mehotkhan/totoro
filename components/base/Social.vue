@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-const appConfig = useAppConfig();
+const runtimeConfig = useRuntimeConfig()
 </script>
 <template>
   <div>
     <div class="flex items-center gap-2 text-xl">
       <a
-        v-if="appConfig.app.github"
-        :href="appConfig.app.github"
+        v-if="runtimeConfig.app.github"
+        :href="runtimeConfig.app.github"
         aria-label="github"
         target="_blank"
         rel="noopener"
@@ -14,8 +14,8 @@ const appConfig = useAppConfig();
         <IconUil:github-alt class="ml-3" />
       </a>
       <a
-        v-if="appConfig.app.linkedin"
-        :href="appConfig.app.linkedin"
+        v-if="runtimeConfig.app.linkedin"
+        :href="runtimeConfig.app.linkedin"
         aria-label="Linkedin"
         target="_blank"
         rel="noopener"
@@ -23,8 +23,8 @@ const appConfig = useAppConfig();
         <IconUil:linkedin-alt class="ml-3" />
       </a>
       <a
-        v-if="appConfig.app.twitter"
-        :href="appConfig.app.twitter"
+        v-if="runtimeConfig.app.twitter"
+        :href="runtimeConfig.app.twitter"
         aria-label="Twitter"
         target="_blank"
         rel="noopener"

@@ -28,7 +28,6 @@ const props = defineProps({
           class="flex max-h-[20rem]"
           :src="data?.thumbnail"
           :alt="data?.title"
-
         />
       </div>
     </div>

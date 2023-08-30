@@ -1,29 +1,27 @@
 <script lang="ts" setup>
-const appConfig = useAppConfig();
+const runtimeConfig = useRuntimeConfig();
 
 useHead({
-  title: appConfig.app.titleFirst + " " + appConfig.app.titleSecond,
-  titleTemplate: `%s - ${
-    appConfig.app.titleFirst + " " + appConfig.app.titleSecond
-  }:// ${appConfig.app.description} `,
+  title: runtimeConfig.app.title,
+  titleTemplate: `%s - ${runtimeConfig.app.title}:// ${runtimeConfig.app.description} `,
 
   meta: [
     { name: "viewport", content: "width=device-width, initial-scale=1" },
-    { name: "theme-color", content: appConfig.app.color },
+    { name: "theme-color", content: runtimeConfig.app.color },
     {
       hid: "description",
       name: "description",
-      content: appConfig.app.description,
+      content: runtimeConfig.app.description,
     },
   ],
 
   link: [
-    { rel: "icon", type: "image/x-icon", href: appConfig.app.favicon },
+    { rel: "icon", type: "image/x-icon", href: runtimeConfig.app.favicon },
     {
       rel: "icon",
       type: "image/png",
       sizes: "192x192",
-      href: appConfig.app.icon,
+      href: runtimeConfig.app.icon,
     },
   ],
 });
@@ -32,6 +30,7 @@ useHead({
   <Html dir="rtl" lang="fa">
     <Body>
       <NuxtLayout>
+        <SeoKit />
         <NuxtLoadingIndicator />
         <UContainer>
           <NuxtPage />

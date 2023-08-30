@@ -1,4 +1,4 @@
 .github
-app.config.ts
+.env
 content
 public

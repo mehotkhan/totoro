@@ -3,11 +3,11 @@ useHead({
   title: "تغییرات",
 });
 const { data }: any = useAsyncData("changes", () =>
-  queryContent("changes").sort({ date: 1 }).find()
+  queryContent("changes").sort({ date: 1 }).find(),
 );
 
 const currentVersion = computed(() =>
-  data.value.find((item: any) => new Date(item.date) < new Date())
+  data.value.find((item: any) => new Date(item.date) < new Date()),
 );
 </script>
 <template>
@@ -48,9 +48,9 @@ const currentVersion = computed(() =>
             <UBadge :label="change.status" color="gray" class="mr-3" />
           </div>
           <p class="leading-tight font-normal text-justify w-full text-md">
-          {{ change.description }}
-          </p>      
-           <p class="leading-tight font-hairline text-justify w-full text-sm">
+            {{ change.description }}
+          </p>
+          <p class="leading-tight font-hairline text-justify w-full text-sm">
             تاریخ انتشار : {{ JalaliDate(change.date) }}
           </p>
           <ContentRenderer :value="change" class="content font-thin" />

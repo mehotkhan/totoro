@@ -30,7 +30,6 @@
                 class="flex max-h-[30rem]"
                 :src="doc?.thumbnail"
                 :alt="doc?.title"
-
               />
             </div>
           </div>
