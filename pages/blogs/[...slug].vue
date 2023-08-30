@@ -35,7 +35,7 @@
           </div>
           <div class="flex relative justify-between md:m-0">
             <div class="relative hidden md:block basis-2/12">
-              <div class="left-0 sticky top-[7rem]">
+              <div class="left-0 sticky top-[7rem] w-full">
                 <LazyBaseContentToc :post="doc" />
               </div>
             </div>

@@ -18,7 +18,7 @@
     </header>
     <main class="bg-white flex min-h-screen mt-20">
       <div class="container">
-        <div class="prose md:prose-xl leading-10 text-justify">
+        <div class="prose leading-10 text-justify">
           <slot />
         </div>
       </div>

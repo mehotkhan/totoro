@@ -9,15 +9,24 @@ const nuxtContent = ref(null);
 const observer: Ref<IntersectionObserver | null | undefined> = ref(null);
 const observerOptions = reactive({
   root: nuxtContent.value,
-  threshold: 1,
+  threshold: 0,
 });
 const router = useRouter();
-const sliderHeight = useState("sliderHeight", () => 0);
-const sliderTop = useState("sliderTop", () => 0);
+
 const tocLinksH2: Ref<Array<HTMLElement>> = ref([]);
 const tocLinksH3: Ref<Array<HTMLElement>> = ref([]);
 
-const tocLinks = computed(() => props?.post?.body.toc.links ?? []);
+const items = computed(() => {
+  const tocLinks: any[] = [];
+  props?.post?.body.toc.links.forEach((item: any) => {
+    tocLinks.push({
+      label: item.text,
+      id: item.id,
+      children: item.children,
+    });
+  });
+  return tocLinks;
+});
 
 const onClick = (id: string) => {
   const el = document.getElementById(id);
@@ -30,8 +39,8 @@ const onClick = (id: string) => {
 onMounted(() => {
   observer.value = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      const id = entry.target.getAttribute("id");
       if (entry.isIntersecting) {
+        const id = entry.target.getAttribute("id");
         currentSection.value = id;
       }
     });
@@ -49,58 +58,64 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="px-3 md:p-0 mb-5 text-md">
-    <h3 class="text-bold">
-      {{ "سرفصل‌ها" }}
-    </h3>
-    <nav class="flex">
-      <div class="relative">
-        <div
-          class="absolute right-0 w-full transition-all duration-200"
-          :style="{ height: `${sliderHeight}px`, top: `${sliderTop}px` }"
-        ></div>
-      </div>
-      <ul class="max-h-150 overflow-x-">
-        <li
-          v-for="{ id, text, children } in tocLinks"
-          :id="`toc-${id}`"
-          :key="id"
+  <div class="px-3 md:p-0 mb-5">
+    <h3 class="text-bold">سرفصل‌ها</h3>
+    <UAccordion
+      default-open
+      multiple
+      :items="items"
+      :ui="{ wrapper: 'flex flex-col w-full', item: { size: 'text-md' } }"
+    >
+      <template #default="{ item, open }">
+        <UButton
           ref="tocLinksH2"
-          class="cursor-pointer pb-3 mb-2 last:mb-0 mx-5"
+          color="gray"
+          variant="ghost"
+          class="flex w-full text-right"
+          :ui="{ rounded: 'rounded-none', padding: { sm: 'p-3' } }"
           :class="{
-            'font-bold': id === currentSection,
+            'font-bold': item.id === currentSection,
           }"
-          @click="onClick(id)"
         >
-          <span class="whitespace-nowrap">
-            {{ text }}
-          </span>
-          <ul v-if="children" class="mr-3 my-2">
-            <li
-              v-for="{ id: childId, text: childText } in children"
-              :id="`toc-${childId}`"
-              :key="childId"
-              ref="tocLinksH3"
-              class="cursor-pointer list-none ml-0 mb-2 last:mb-0"
-              :class="{
-                'font-bold': childId === currentSection,
-              }"
-              @click.stop="onClick(childId)"
-            >
-              <span class="whitespace-nowrap">
-                {{ childText }}
-              </span>
-            </li>
-          </ul>
-        </li>
-        <li
-          v-if="props.post?.comment"
-          class="cursor-pointer pb-3 mb-2 last:mb-0 mx-5"
-          @click.stop="onClick('comments')"
-        >
-          <span>دیدگاه ها</span>
-        </li>
-      </ul>
-    </nav>
+          <span class="whitespace-nowrap" @click="onClick(item.id)">{{
+            item.label
+          }}</span>
+
+          <template v-if="item.children" #trailing>
+            <UIcon
+              name="i-heroicons-chevron-right-20-solid"
+              class="w-5 h-5 ms-auto transform transition-transform duration-200"
+              :class="[open && 'rotate-90']"
+            />
+          </template>
+        </UButton>
+      </template>
+      <template #item="{ item }">
+        <ul v-if="item.children" class="mr-3 my-2">
+          <li
+            v-for="{ id: childId, text: childText } in item.children"
+            :id="`toc-${childId}`"
+            :key="childId"
+            ref="tocLinksH3"
+            class="cursor-pointer list-none ml-0 mb-2 last:mb-0"
+            :class="{
+              'font-bold': childId === currentSection,
+            }"
+            @click.stop="onClick(childId)"
+          >
+            <span class="whitespace-nowrap text-sm">
+              {{ childText }}
+            </span>
+          </li>
+        </ul>
+      </template>
+    </UAccordion>
+    <li
+      v-if="props.post?.comment"
+      class="cursor-pointer pb-3 mb-2 last:mb-0 mx-3"
+      @click.stop="onClick('comments')"
+    >
+      <span>دیدگاه ها</span>
+    </li>
   </div>
 </template>
