@@ -2,3 +2,4 @@
 .env
 content
 public
+decap-extra-config.yml
