@@ -20,3 +20,5 @@ jobs:
           github_token: ${{ secrets.WORKFLOW_TOKEN }}
           source_repo_path: "mehotkhan/totoro"
           upstream_branch: 'master'
+          pr_branch_name_prefix: 'daily/template_sync'
+          pr_title :'Totoro Daily-Update'

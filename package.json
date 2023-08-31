@@ -18,10 +18,10 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20230821.0",
-    "@iconify/json": "^2.2.108",
+    "@iconify/json": "^2.2.109",
     "@nuxt/content": "npm:@nuxt/content-edge@latest",
     "@nuxt/image-edge": "1.0.0-rc.1-28223221.9f026b2",
-    "@nuxthq/ui": "npm:@nuxthq/ui-edge@2.7.0-28223293.bece7a1",
+    "@nuxthq/ui": "npm:@nuxthq/ui-edge@2.7.0-28223581.ead87a9",
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
     "@types/node": "^20.5.7",
     "eslint": "^8.48.0",
@@ -34,7 +34,7 @@
     "sass": "^1.66.1",
     "typescript": "^5.2.2",
     "unplugin-icons": "0.16.6",
-    "unplugin-vue-components": "^0.25.1",
+    "unplugin-vue-components": "^0.25.2",
     "vite-plugin-compression": "^0.5.1"
   }
 }
