@@ -30,6 +30,7 @@ export default defineNuxtConfig({
       giscus_mapping: process.env.GISCUS_MAPPING,
       giscus_theme: process.env.GISCUS_THEME,
       giscus_reaction: process.env.GISCUS_REACTION,
+      giscus_locale: process.env.APP_LOCALE,
       favicon: "/favicon.ico",
       icon: "/icons.webp",
       color: "#e5e7eb",

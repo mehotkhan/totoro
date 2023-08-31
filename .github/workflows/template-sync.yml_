@@ -2,7 +2,7 @@ name: Repo Sync
 
 on:
   schedule:
-    - cron:  "0 0 * * *" ## At 12:00am
+    - cron: "0 0 * * *" ## At 12:00am
 
 jobs:
   repo-sync:
@@ -19,6 +19,6 @@ jobs:
         with:
           github_token: ${{ secrets.WORKFLOW_TOKEN }}
           source_repo_path: "mehotkhan/totoro"
-          upstream_branch: 'master'
-          pr_branch_name_prefix: 'daily/template_sync'
-          pr_title :'Totoro Daily-Update'
+          upstream_branch: "master"
+          pr_branch_name_prefix: "daily/template_sync"
+          pr_title: "Totoro Daily-Update"

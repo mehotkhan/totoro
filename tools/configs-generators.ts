@@ -3,7 +3,7 @@ const ejs = require("ejs");
 const yaml = require("js-yaml");
 require("dotenv").config();
 
-const configTemplate = fs.readFileSync("netlify-template.yaml", "utf8");
+const configTemplate = fs.readFileSync("tools/netlify-template.yaml", "utf8");
 const configString = ejs.render(configTemplate);
 
 try {

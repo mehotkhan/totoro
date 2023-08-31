@@ -17,10 +17,10 @@ const runtimeConfig = useRuntimeConfig();
       :mapping="runtimeConfig?.app.giscus_mapping"
       :theme="runtimeConfig?.app.giscus_theme"
       :reactions-enabled="runtimeConfig?.app.giscus_reaction"
+      :lang="runtimeConfig?.app.giscus_locale"
       strict="0"
       loading="lazy"
       input-position="top"
-      lang="fa"
       emit-metadata="0"
     />
   </div>
