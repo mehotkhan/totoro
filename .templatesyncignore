@@ -3,3 +3,4 @@
 content
 public
 decap-extra-config.yml
+app.config.ts
