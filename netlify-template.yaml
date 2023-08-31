@@ -1,14 +1,14 @@
 backend:
   name: github
-  repo: mehotkhan/totoro
-  base_url: https://totoro.alizemani.ir
+  repo: <%= process.env.GITHUB_REPO %>
+  base_url: <%= process.env.PUBLIC_SITE_URL %>
   auth_endpoint: /github-auth/auth
 
 local_backend: true
 # publish_mode: editorial_workflow
 media_folder: /public/content
 public_folder: /content
-locale: fa
+locale: <%= process.env.APP_LOCALE %>
 collections:
   - name: "notes"
     label: "یادداشت"
@@ -65,25 +65,6 @@ collections:
           default: false,
           required: true,
         }
-
-  - name: "changes"
-    label: "تغییرات"
-    folder: "content/changes"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "عنوان", name: "title", widget: "string", required: true }
-      - { label: "پوستر", name: "thumbnail", widget: "image", required: true }
-      - { label: "وضعیت", name: "status", widget: "string", required: true }
-      - { label: "زمان انتشار", name: "date", widget: "datetime" }
-
-      - {
-          label: "خلاصه",
-          name: "description",
-          widget: "string",
-          required: true,
-        }
-      - { label: "محتوا", name: "body", widget: "markdown", required: true }
 
   - name: category
     label: دسته‌بندی‌
