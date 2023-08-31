@@ -8,7 +8,6 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     'IconUil:alignJustify': typeof import('~icons/uil/align-justify')['default']
-    'IconUil:check': typeof import('~icons/uil/check')['default']
     'IconUil:githubAlt': typeof import('~icons/uil/github-alt')['default']
     'IconUil:linkedinAlt': typeof import('~icons/uil/linkedin-alt')['default']
     'IconUil:twitterAlt': typeof import('~icons/uil/twitter-alt')['default']
