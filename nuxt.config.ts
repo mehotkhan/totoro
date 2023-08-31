@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     "@/assets/scss/base.scss",
     "@/node_modules/vazirmatn/Vazirmatn-Variable-font-face.css",
   ],
-  modules: ["@nuxt/image-edge", "@nuxthq/ui", "@nuxt/content"],
+  modules: ["@nuxt/image", "@nuxthq/ui", "@nuxt/content"],
   extends: ["nuxt-seo-kit"],
   runtimeConfig: {
     app: {
