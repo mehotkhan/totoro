@@ -3,6 +3,7 @@ import Components from "unplugin-vue-components/vite";
 import IconsResolver from "unplugin-icons/resolver";
 import viteCompression from "vite-plugin-compression";
 import { GenerateRoutes } from "./tools/contentRoutes";
+import { GenerateDecap } from "./tools/configs-generators";
 
 export default defineNuxtConfig({
   ssr: true,
@@ -82,6 +83,11 @@ export default defineNuxtConfig({
   vue: {
     compilerOptions: {
       isCustomElement: (tag) => ["giscus-widget"].includes(tag),
+    },
+  },
+  hooks: {
+    "build:done": () => {
+      GenerateDecap();
     },
   },
 });
