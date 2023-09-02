@@ -6,10 +6,7 @@ import { GenerateRoutes } from "./tools/contentRoutes";
 
 export default defineNuxtConfig({
   ssr: true,
-  css: [
-    "@/assets/scss/base.scss",
-    "@/node_modules/vazirmatn/Vazirmatn-Variable-font-face.css",
-  ],
+  css: ["@/assets/scss/base.scss", "@/assets/scss/extra.scss"],
   modules: ["@nuxt/image", "@nuxthq/ui", "@nuxt/content"],
   extends: ["nuxt-seo-kit"],
   runtimeConfig: {
@@ -32,7 +29,7 @@ export default defineNuxtConfig({
       giscus_reaction: process.env.GISCUS_REACTION,
       giscus_locale: process.env.APP_LOCALE,
       favicon: "/favicon.ico",
-      icon: "/icons.webp",
+      icon: "/icons.png",
       color: "#e5e7eb",
     },
     public: {

@@ -7,3 +7,6 @@ app.config.ts
 components.d.ts
 pnpm-lock.yaml
 README.md
+tailwind.config.js
+assets/scss/extra.scss
+app.vue

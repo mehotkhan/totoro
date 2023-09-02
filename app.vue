@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import "vazirmatn/Vazirmatn-Variable-font-face.css";
 const runtimeConfig = useRuntimeConfig();
 
 useHead({
