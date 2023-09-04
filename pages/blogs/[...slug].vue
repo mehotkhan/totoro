@@ -10,7 +10,7 @@
             <div
               class="basis-2/2 md:basis-1/2 flex-col justify-start items-center"
             >
-              <h2>
+              <h2 class="">
                 {{ doc?.title }}
               </h2>
               <p>

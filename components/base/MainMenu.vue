@@ -2,7 +2,7 @@
 const appConfig = useAppConfig();
 const route = useRoute();
 const { data }: any = useAsyncData("pages", () =>
-  queryContent("pages").where({ menu: true }).find(),
+  queryContent("pages").where({ menu: true }).find()
 );
 </script>
 
@@ -12,7 +12,7 @@ const { data }: any = useAsyncData("pages", () =>
       <NuxtLink
         :external="false"
         :to="menu.to"
-        class="hover:text-black py-1 px-5"
+        class="hover:text-black py-1 px-5 dark:hover:text-gray-200"
         :class="route.path == menu.to ? 'router-link-active' : ''"
         >{{ menu.title }}</NuxtLink
       >
@@ -20,7 +20,7 @@ const { data }: any = useAsyncData("pages", () =>
     <li v-for="page in data" :key="page._path">
       <NuxtLink
         :to="page._path"
-        class="hover:text-black py-1 px-5 break-keep"
+        class="hover:text-black py-1 px-5 break-keep dark:hover:text-gray-200"
         :class="
           page.to !== '/' && route.path == page._path
             ? 'router-link-active'

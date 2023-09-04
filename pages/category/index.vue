@@ -3,7 +3,7 @@ useHead({
   title: "دسته‌بندی‌ها",
 });
 const { data }: any = useAsyncData("category", () =>
-  queryContent("category").find(),
+  queryContent("category").find()
 );
 </script>
 <template>
@@ -45,13 +45,15 @@ const { data }: any = useAsyncData("category", () =>
             />
             <div>
               <h3
-                class="font-semibold text-sm text-gray-900 dark:text-white leading-tight hover:underline"
+                class="font-semibold text-sm  leading-tight hover:underline"
               >
-                <NuxtLink :to="cat._path"> # {{ cat.title }} </NuxtLink>
+                <NuxtLink :to="cat._path" class="">
+                  # {{ cat.title }}
+                </NuxtLink>
               </h3>
 
               <p
-                class="font-thin text-s text-gray-900 dark:text-white leading-tight"
+                class="font-thin text-s  leading-tight"
               >
                 <ContentRenderer :value="cat" class="content" />
               </p>

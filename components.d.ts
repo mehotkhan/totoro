@@ -10,6 +10,8 @@ declare module 'vue' {
     'IconUil:alignJustify': typeof import('~icons/uil/align-justify')['default']
     'IconUil:githubAlt': typeof import('~icons/uil/github-alt')['default']
     'IconUil:linkedinAlt': typeof import('~icons/uil/linkedin-alt')['default']
+    'IconUil:moon': typeof import('~icons/uil/moon')['default']
+    'IconUil:sun': typeof import('~icons/uil/sun')['default']
     'IconUil:twitterAlt': typeof import('~icons/uil/twitter-alt')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

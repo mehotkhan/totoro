@@ -3,7 +3,7 @@ const runtimeConfig = useRuntimeConfig();
 </script>
 <template>
   <div>
-    <div class="flex items-center gap-2 text-xl">
+    <div class="flex items-center gap-2">
       <a
         v-if="runtimeConfig.app.github"
         :href="runtimeConfig.app.github"
@@ -11,7 +11,7 @@ const runtimeConfig = useRuntimeConfig();
         target="_blank"
         rel="noopener"
       >
-        <IconUil:github-alt class="ml-3" />
+        <IconUil:github-alt />
       </a>
       <a
         v-if="runtimeConfig.app.linkedin"
@@ -20,7 +20,7 @@ const runtimeConfig = useRuntimeConfig();
         target="_blank"
         rel="noopener"
       >
-        <IconUil:linkedin-alt class="ml-3" />
+        <IconUil:linkedin-alt />
       </a>
       <a
         v-if="runtimeConfig.app.twitter"
@@ -29,7 +29,7 @@ const runtimeConfig = useRuntimeConfig();
         target="_blank"
         rel="noopener"
       >
-        <IconUil:twitter-alt class="ml-3" />
+        <IconUil:twitter-alt />
       </a>
     </div>
   </div>
