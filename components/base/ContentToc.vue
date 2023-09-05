@@ -3,6 +3,7 @@ import { Ref } from "vue";
 const props = defineProps({
   post: { type: Object, required: true, default: Function },
 });
+const { toggleSidebar } = useSidebar();
 
 const currentSection = ref<null | string>("");
 const nuxtContent = ref(null);
@@ -34,6 +35,7 @@ const onClick = (id: string) => {
     router.push({ hash: `#${id}` });
     el.scrollIntoView({ behavior: "smooth", block: "start" });
     currentSection.value = id;
+    toggleSidebar();
   }
 };
 onMounted(() => {

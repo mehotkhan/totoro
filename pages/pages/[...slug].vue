@@ -3,7 +3,7 @@
     <ContentDoc>
       <template #default="{ doc }">
         <section class="flex flex-col">
-          <LazyBasePageHeader :data="doc" />
+          <LazyBasePageIntro :data="doc" />
           <div class="flex relative mx-3 md:m-0">
             <ContentRenderer :value="doc" />
           </div>

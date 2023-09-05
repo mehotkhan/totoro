@@ -1,4 +1,12 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { sidebarEnabled } = useSidebar();
+onMounted(() => {
+  sidebarEnabled.value = true;
+});
+onUnmounted(() => {
+  sidebarEnabled.value = false;
+});
+</script>
 <template>
   <section class="flex flex-col justify-center content-center pb-10">
     <ContentDoc>
@@ -34,17 +42,13 @@
             </div>
           </div>
           <div class="flex relative justify-between md:m-0">
-            <div class="relative hidden md:block basis-2/12">
-              <div class="left-0 sticky top-[7rem] w-full">
-                <LazyBaseContentToc :post="doc" />
-              </div>
-            </div>
-            <div class="basis-12/12 md:basis-10/12 md:mr-10">
+            <UContainer class="flex-col">
               <ContentRenderer :value="doc" class="content mb-10" />
               <LazyGiscus v-if="doc?.comment" />
-            </div>
+            </UContainer>
           </div>
         </section>
+        <BaseSidebar :post="doc" />
       </template>
     </ContentDoc>
   </section>

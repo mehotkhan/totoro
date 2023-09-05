@@ -7,11 +7,7 @@
         <BaseLogoArea />
         <BaseMainMenu class="text-md hidden md:text-sm lg:contents" />
       </div>
-      <div class="flex gap-4 text-md items-center">
-        <BaseMobileMenu class="text-md lg:hidden" />
-        <BaseSocial class="items-center hidden md:flex" />
-        <BaseDarkMode class="items-center hidden md:flex" />
-      </div>
+      <BaseToolsMenu />
     </div>
   </header>
 </template>

@@ -9,7 +9,7 @@ const { data }: any = useAsyncData("category", () =>
 <template>
   <section class="flex flex-col">
     <ContentDoc v-slot="{ doc }" path="/pages/category">
-      <LazyBasePageHeader :data="doc" />
+      <LazyBasePageIntro :data="doc" />
     </ContentDoc>
 
     <div class="w-full grid grid-cols-3 gap-10 align-middle mt-0">
