@@ -1,4 +1,4 @@
-const sidebarIsOpen = ref(false);
+const sidebarIsOpen = ref(true);
 const sidebarEnabled = ref(false);
 
 export default () => {
