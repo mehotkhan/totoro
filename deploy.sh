@@ -5,4 +5,4 @@ set -e
 
 # pnpm clean
 pnpm generate
-proxychains wrangler pages publish .output/public
+wrangler pages publish .output/public

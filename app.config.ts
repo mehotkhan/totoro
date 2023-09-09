@@ -14,7 +14,7 @@ export default defineAppConfig({
       to: "/blogs",
     },
     {
-      title: "دسته‌بندی‌ها",
+      title: "بایگانی",
       to: "/category",
     },
   ],

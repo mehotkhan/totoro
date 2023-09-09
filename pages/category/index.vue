@@ -16,7 +16,7 @@ const { data }: any = useAsyncData("category", () =>
       <UCard
         v-for="cat in data"
         :key="cat._path"
-        class="w-full max-h-[30rem]"
+        class="w-full min-h-[30rem]"
         :ui="{
           base: '',
           ring: '',

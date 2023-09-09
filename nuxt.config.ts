@@ -8,7 +8,7 @@ import { GenerateDecap } from "./tools/configs-generators";
 export default defineNuxtConfig({
   ssr: true,
   css: ["@/assets/scss/base.scss", "@/assets/scss/extra.scss"],
-  modules: ["@nuxt/image", "@nuxthq/ui", "@nuxt/content"],
+  modules: ["@nuxt/image-edge", "@nuxt/ui", "@nuxt/content"],
   extends: ["nuxt-seo-kit"],
   runtimeConfig: {
     app: {
@@ -79,6 +79,13 @@ export default defineNuxtConfig({
   },
   image: {
     format: ["webp"],
+    provider: "ipx",
+    ipx: {
+      modifiers: {
+        quality: "80",
+        format: ["webp"],
+      },
+    },
   },
   vue: {
     compilerOptions: {
@@ -88,6 +95,11 @@ export default defineNuxtConfig({
   hooks: {
     "build:done": () => {
       GenerateDecap();
+    },
+  },
+  content: {
+    highlight: {
+      theme: "github-dark",
     },
   },
 });
